@@ -1,0 +1,192 @@
+---
+const menu = [
+  {
+    link: "/o-nas",
+    name: "O nas",
+    submenu: [
+      { name: "link pierwszy", link: "/" },
+      { name: "link drugi", link: "/" },
+      { name: "link trzeci", link: "/" },
+    ],
+  },
+  { link: "/produkty", name: "Produkty" },
+  { link: "/aktualnosci", name: "Aktualności" },
+  { link: "/kariera", name: "Kariera" },
+  { link: "/kontakt", name: "Kontakt" },
+];
+const pathname = new URL(Astro.request.url).pathname;
+const currentPath = pathname.slice(1);
+const { isHome } = Astro.props;
+
+import Logo from "../components/Logo.astro";
+---
+
+<header
+  class=`fixed top-0 left-0 right-0 header  z-50 transition duration-200 ease-out ${isHome ? 'is-home':''}`
+>
+  <div class="container wrapper">
+    <div class="flex items-center justify-between">
+      <Logo />
+      <nav class="main-nav main-menu">
+        <button id="close-menu" class="absolute top-10 right-14 md:hidden"
+          ><svg
+            width="40"
+            height="40"
+            viewBox="0 0 40 40"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M2.5 20C2.5 24.6413 4.34374 29.0925 7.62563 32.3744C10.9075 35.6563 15.3587 37.5 20 37.5C24.6413 37.5 29.0925 35.6563 32.3744 32.3744C35.6563 29.0925 37.5 24.6413 37.5 20C37.5 15.3587 35.6563 10.9075 32.3744 7.62563C29.0925 4.34374 24.6413 2.5 20 2.5C15.3587 2.5 10.9075 4.34374 7.62563 7.62563C4.34374 10.9075 2.5 15.3587 2.5 20Z"
+              stroke="#696464"
+              stroke-width="1.66667"
+              stroke-linecap="round"
+              stroke-linejoin="round"></path>
+            <path
+              d="M13.3333 26.6667L26.6666 13.3333"
+              stroke="#696464"
+              stroke-width="1.66667"
+              stroke-linecap="round"
+              stroke-linejoin="round"></path>
+            <path
+              d="M26.6666 26.6667L13.3333 13.3333"
+              stroke="#696464"
+              stroke-width="1.66667"
+              stroke-linecap="round"
+              stroke-linejoin="round"></path>
+          </svg>
+        </button>
+        <ul
+          class=`flex flex-col md:flex-row md:gap-4 lg:gap-[46px] px-12 md:px-0 items-center ${isHome ? 'md:text-white':''}`
+        >
+          {
+            menu.map((item) => {
+              if (item.submenu) {
+                return (
+                  <li class="group relative submenu-link md:py-[23px] w-full md:w-auto">
+                    <a href={item.link} class="regular py-2 md:py-0 link cursor-pointer flex gap-3 items-center">
+                        <span>{item.name}</span>
+                        <svg
+                        class="md:hidden group-has-[.open]:rotate-180 transition-all duration-200"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <rect width="24" height="24" fill="white" />
+                          <path
+                            d="M6 9L12 15L18 9"
+                            stroke="#2B2B2B"
+                            stroke-linecap="round"
+                          />
+                        </svg>
+                    </a>
+                    <div class="bg-blue_opacity rounded-xl md:rounded-none md:bg-white text-grey md:border-t md:border-grey/40 submenu-container ">
+                      <div class="container md:px-8 lg:px-12">
+                        <div class="ml-auto flex justify-end gap-8">
+                          <ul class=" w-full max-w-[284px] flex flex-col md:gap-6">
+                            {item.submenu.map((submenu) => {
+                              return (
+                                <li class="w-full">
+                                  <a
+                                    href={submenu.link}
+                                    class="flex items-center w-full rounded-3xl py-3 md:py-2 px-5 md:hover:bg-blue_opacity transition duration-200 ease-out md:active:bg-blue_hover"
+                                  >
+                                    <span>{submenu.name}</span>
+                                    <svg
+                                    class=" w-4 h-4 ml-auto"
+                                      width="24"
+                                      height="24"
+                                      viewBox="0 0 24 24"
+                                      fill="none"
+                                      xmlns="http://www.w3.org/2000/svg"
+                                      class="ml-auto"
+                                    >
+                                      <g
+                                        opacity="0.6"
+                                        clip-path="url(#clip0_183_20906)"
+                                      >
+                                        <path
+                                          d="M23.2199 12L0.755859 12"
+                                          stroke="#232222"
+                                          stroke-width="1.66667"
+                                          stroke-linecap="round"
+                                          stroke-linejoin="round"
+                                        />
+                                        <path
+                                          d="M11.2578 23L22.9008 12.751C23.0072 12.6572 23.0924 12.5417 23.1508 12.4124C23.2092 12.2831 23.2394 12.1429 23.2394 12.001C23.2394 11.8591 23.2092 11.7189 23.1508 11.5896C23.0924 11.4603 23.0072 11.3448 22.9008 11.251L11.2578 1"
+                                          stroke="#232222"
+                                          stroke-width="1.66667"
+                                          stroke-linecap="round"
+                                          stroke-linejoin="round"
+                                        />
+                                      </g>
+                                      <defs>
+                                        <clipPath id="clip0_183_20906">
+                                          <rect
+                                            width="24"
+                                            height="24"
+                                            fill="white"
+                                            transform="translate(0 24) rotate(-90)"
+                                          />
+                                        </clipPath>
+                                      </defs>
+                                    </svg>
+                                  </a>
+                                </li>
+                              );
+                            })}
+                          </ul>
+                          <img class="hidden md:block" src="/assets/images/menu_img.png" />
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                );
+              } else {
+                return (
+                  <li class="relative z-20  md:py-[23px] w-full md:w-auto">
+                    <a
+                      href={item.link}
+                      class={` regular py-2 md:py-0 block ${
+                        currentPath === item.link.slice(1) ? "current" : ""
+                      } ${item.name === "Kontakt" ? "btn small primary  mx-auto md:ml-0" : "text-left link"}`}
+                    >
+                      {item.name}
+                    </a>
+                  </li>
+                );
+              }
+            })
+          }
+        </ul>
+      </nav>
+      <button
+        id="open-menu"
+        class="md:hidden flex gap-1 h-12 w-14 items-center justify-center -mr-4"
+      >
+        <svg
+          viewBox="-2.4 -2.4 28.80 28.80"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          transform="rotate(0)"
+          stroke="#232222"
+          stroke-width="0.72"
+          ><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g
+            id="SVGRepo_tracerCarrier"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke="#CCCCCC"
+            stroke-width="0.096"></g><g id="SVGRepo_iconCarrier">
+            <path
+              d="M5 8H13.75M5 12H19M10.25 16L19 16"
+              stroke="#232222"
+              stroke-linecap="round"
+              stroke-linejoin="round"></path>
+          </g></svg
+        >
+      </button>
+    </div>
+  </div>
+</header>

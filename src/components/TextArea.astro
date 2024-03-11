@@ -1,0 +1,9 @@
+---
+const { id, label, placeholder, name, type, error, className } = Astro.props;
+---
+
+<div class="custom-textarea">
+  <textarea id={id} placeholder={placeholder} name={name} rows="8"></textarea>
+  <label for={id}>{label}</label>
+  <div class="textarea-cover"></div>
+</div>

@@ -1,0 +1,11 @@
+---
+const {h2,  p, textColor, button, link} = Astro.props
+---
+
+<div >
+    <div class="text-center max-w-[910px] mx-auto "> 
+    <h2 class="mb-8">{h2}</h2>
+        <p class=`${textColor ? textColor : 'text-grey'} big ${button && 'mb-10'}`>{p}</p>
+        {button && <a href={link} class="btn primary dot mx-auto">{button}</a>}      
+    </div>
+</div>

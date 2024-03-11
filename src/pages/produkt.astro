@@ -1,0 +1,191 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Select from '../components/Select.astro';
+const tabsList = [1, 2, 3];
+const attributes = [
+    {name:'Atrybut', value:'Innowacyjność i Rozwój'},
+    {name:'Atrybut', value:'Innowacyjność i Rozwój'},
+    {name:'Atrybut', value:'Innowacyjność i Rozwój'},
+    {name:'Atrybut', value:'Innowacyjność i Rozwój'}
+    ]
+
+const productSlider =[1, 2, 3, 4, 5, 6]
+---
+
+<Layout title="Produkt">
+    <section class="pt-20 lg:pt-36 pb-12 lg:pb-16">
+        <div class="container wrapper">
+            <div class="md:grid md:grid-cols-2">
+                <div class="mb-12 md:mb-0">
+                    <div class="swiper product_swiper mb-6">
+                        <div class="swiper-wrapper">
+                            {productSlider.map(item=>{
+                                return(
+                                <div class="swiper-slide">
+                                    <img src="/assets/images/product_img_1.png" class="w-full"/>
+                                </div>
+                                )
+                            })}
+                         
+                        </div>
+                    </div>
+                    <div  class="swiper product_thumb_slider">
+                        <div class="swiper-wrapper">
+                            {productSlider.map(item=>{
+                                return(
+                                <div class="swiper-slide cursor-pointer">
+                                    <img class="w-full" src="/assets/images/product_img_1.png" />
+                                </div>
+                                )
+                            })}
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-col lg:pl-[100px]">
+                    <h3 class="mb-8">Produkt</h3>
+                    <p class="leading-[36px] text-grey mb-8">Korem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. </p>
+                    <ul class="max-w-[299px] flex flex-col gap-6 mb-10">
+                    {attributes.map(item=>{
+                        return(
+                            <li class="w-full flex justify-between items-center"><h4>{item.name}</h4> <p class="text-grey">{item.value}</p></li>
+                        )
+                    })}
+                    </ul>
+                    <form class="product-form">
+                        <select id="variant-select" class="">
+                            <option value="">Wybierz wariant</option>
+                            <option value="first">first</option>
+                            <option value="second">second</option>
+                            <option value="third">third</option>
+                          </select>
+                          <a class="btn primary w-full !max-w-full text-center mt-5">Zapytaj o produkt</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+  <section class="pt-12 pb-32 tab-section" >
+    <div class="container lg:px-12">
+      <ul class="tab-nav flex gap-4 text-center overflow-auto snap-mandatory snap-x hide-scrollbar">
+        {
+          tabsList.map((item) => {
+            return <li class={`tab snap-center whitespace-nowrap ${item === 1 ? 'active':''}`}  role="tab" data-tab_target={item}>Tab nazwa {item}</li>;
+          })
+        }
+      </ul>
+    </div>
+    <div class="bg-neutral wrapper" >
+      {
+        tabsList.map((item) => {
+          return (
+            <div data-tab_content={item} role="tabpanel" class={`tab-content pt-20 pb-32 ${item === 1? 'show':''}`}>
+              <div class="max-w-[998px] mx-auto ">
+                <h3>
+                    {item}
+                  Corem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+                  vulputate libero et velit interdum, ac aliquet odio mattis.
+                </h3>
+                <p>
+                  Gorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+                  vulputate libero et velit interdum, ac aliquet odio mattis.
+                  Class aptent taciti sociosqu ad litora torquent per conubia
+                  nostra, per inceptos himenaeos. Curabitur tempus urna at
+                  turpis condimentum lobortis. Ut commodo efficitur neque.
+                </p>
+                <p>
+                  Gorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+                  vulputate libero et velit interdum, ac aliquet odio mattis.
+                  Class aptent taciti sociosqu ad litora torquent per conubia
+                  nostra, per inceptos himenaeos. Curabitur tempus urna at
+                  turpis condimentum lobortis. Ut commodo efficitur neque.
+                </p>
+                <p>
+                  Corem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+                  vulputate libero et velit interdum, ac aliquet odio mattis.
+                </p>
+                <p>
+                  Gorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+                  vulputate libero et velit interdum, ac aliquet odio mattis.
+                  Class aptent taciti sociosqu ad litora torquent per conubia
+                  nostra, per inceptos himenaeos. Curabitur tempus urna at
+                  turpis condimentum lobortis. Ut commodo efficitur neque.
+                </p>
+                <p>
+                  Gorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+                  vulputate libero et velit interdum, ac aliquet odio mattis.
+                  Class aptent taciti sociosqu ad litora torquent per conubia
+                  nostra, per inceptos himenaeos. Curabitur tempus urna at
+                  turpis condimentum lobortis. Ut commodo efficitur neque.
+                </p>
+              </div>
+            </div>
+          );
+        })
+      }
+    </div>
+  </section>
+  <section class="pb-20">
+    <div class="container wrapper">
+      <div class="grid md:grid-cols-3 gap-14">
+        <div class="max-w-[406px] grid justify-center text-center mx-auto">
+          <div
+            class="rounded-full bg-blue_opacity w-[108px] h-[108px] mx-auto flex items-center justify-center mb-3"
+          >
+            <span class="text-[48px] leading-[58px]">90</span>
+          </div>
+          <div
+            class="bg-blue_opacity rounded-[100px] px-10 py-3 flex gap-2 items-center max-w-max mb-5 mx-auto"
+          >
+            <img src="/assets/icons/lab.svg" />
+
+            <h3>Produktów</h3>
+          </div>
+          <p class="big text-grey md:px-3">
+            Doradzamy oraz dostarczamy najnowocześniejszy sprzęt laboratoryjny,
+            oprogramowanie, akcesoria i odczynniki.
+          </p>
+        </div>
+        <div class="max-w-[406px] grid justify-center text-center mx-auto">
+          <div
+            class="rounded-full bg-blue_opacity w-[108px] h-[108px] mx-auto flex items-center justify-center mb-3"
+          >
+            <span class="text-[48px] leading-[58px]">20</span>
+          </div>
+
+          <div
+            class="bg-blue_opacity rounded-[100px] px-10 py-3 flex gap-2 items-center max-w-max mb-5 mx-auto"
+          >
+            <img src="/assets/icons/delivery.svg" />
+            <h3>Dostawców</h3>
+          </div>
+          <p class="big text-grey md:px-3">
+            Doradzamy oraz dostarczamy najnowocześniejszy sprzęt laboratoryjny,
+            oprogramowanie, akcesoria i odczynniki.
+          </p>
+        </div>
+        <div class="max-w-[406px] grid justify-center text-center mx-auto">
+          <div
+            class="rounded-full bg-blue_opacity w-[108px] h-[108px] mx-auto flex items-center justify-center mb-3"
+          >
+            <span class="text-[48px] leading-[58px]">4</span>
+          </div>
+
+          <div
+            class="bg-blue_opacity rounded-[100px] px-10 py-3 flex gap-2 items-center max-w-max mb-5 mx-auto"
+          >
+            <img src="/assets/icons/blood-sample.svg" />
+            <h3>Lata na rynku</h3>
+          </div>
+          <p class="big text-grey md:px-3">
+            Doradzamy oraz dostarczamy najnowocześniejszy sprzęt laboratoryjny,
+            oprogramowanie, akcesoria i odczynniki.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+<script is:inline src="/assets/js/swiper-bundle.min.js"></script>
+<link rel="stylesheet" href="/assets/css/swiper-bundle.min.css" />
+<script is:inline src="/assets/js/custom-select.min.js"></script>
+<script is:inline src="/assets/js/main.js"></script>

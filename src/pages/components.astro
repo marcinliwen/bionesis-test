@@ -1,0 +1,259 @@
+---
+
+import Layout from '../layouts/Layout.astro'
+import Input from '../components/Input.astro'
+import TextArea from '../components/TextArea.astro'
+---
+<Layout>
+    <div class="container wrapper">
+        <div class="grid gap-4 text-center justify-center">
+          <h2 class="my-8">Buttons</h2>
+          <a class="btn primary">Dowiedz się więcej</a>
+          <a class="btn primary dot">Dowiedz się więcej</a>
+          <a class="btn primary dot">Zamów kontakt</a>
+          <a class="btn primary dot">Szczegóły</a>
+          <a class="btn primary small flex items-center gap-2">
+            <svg
+              width="25"
+              height="24"
+              viewBox="0 0 25 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g clip-path="url(#clip0_2202_1041)">
+                <path
+                  d="M23.309 5.55905C23.5904 5.84008 23.7487 6.22136 23.749 6.61905V21C23.7485 21.5963 23.5113 22.1679 23.0897 22.5894C22.668 23.0109 22.0962 23.2478 21.5 23.248H3.50002C2.90346 23.2483 2.33121 23.0117 1.90909 22.5901C1.48698 22.1685 1.24955 21.5966 1.24902 21V3.00005C1.24876 2.70432 1.3068 2.41144 1.41982 2.13816C1.53283 1.86489 1.69862 1.61657 1.90768 1.40741C2.11674 1.19825 2.36499 1.03236 2.63822 0.919222C2.91145 0.806083 3.2043 0.747916 3.50002 0.748047H17.877C18.074 0.747958 18.2691 0.786681 18.4512 0.862006C18.6332 0.93733 18.7987 1.04778 18.938 1.18705L23.309 5.55905Z"
+                  stroke="white"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"></path>
+                <path
+                  d="M17.749 0.748047V5.24805C17.749 5.64587 17.9071 6.0274 18.1884 6.30871C18.4697 6.59001 18.8512 6.74805 19.249 6.74805H23.749"
+                  stroke="white"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"></path>
+                <path
+                  d="M5.18954 19V12.7H7.24154C7.64954 12.7 8.00954 12.784 8.32154 12.952C8.63954 13.12 8.88554 13.354 9.05954 13.654C9.23954 13.954 9.32954 14.302 9.32954 14.698C9.32954 15.082 9.24854 15.424 9.08654 15.724C8.92454 16.024 8.70254 16.261 8.42054 16.435C8.13854 16.603 7.81154 16.687 7.43954 16.687H5.95454V19H5.18954ZM5.95454 15.994H7.43954C7.76954 15.994 8.03954 15.874 8.24954 15.634C8.46554 15.388 8.57354 15.076 8.57354 14.698C8.57354 14.308 8.44754 13.993 8.19554 13.753C7.94354 13.513 7.62254 13.393 7.23254 13.393H5.95454V15.994ZM10.4015 19V12.7H12.3185C12.9125 12.7 13.4345 12.835 13.8845 13.105C14.3405 13.369 14.6975 13.738 14.9555 14.212C15.2135 14.686 15.3425 15.232 15.3425 15.85C15.3425 16.462 15.2135 17.005 14.9555 17.479C14.6975 17.953 14.3405 18.325 13.8845 18.595C13.4345 18.865 12.9125 19 12.3185 19H10.4015ZM11.1665 18.298H12.3185C12.6365 18.298 12.9305 18.238 13.2005 18.118C13.4705 17.992 13.7075 17.815 13.9115 17.587C14.1215 17.359 14.2835 17.098 14.3975 16.804C14.5175 16.504 14.5775 16.186 14.5775 15.85C14.5775 15.514 14.5175 15.199 14.3975 14.905C14.2835 14.605 14.1215 14.341 13.9115 14.113C13.7075 13.885 13.4705 13.711 13.2005 13.591C12.9305 13.465 12.6365 13.402 12.3185 13.402H11.1665V18.298ZM16.5977 19V12.7H20.3417V13.393H17.3627V15.544H19.9907V16.237H17.3627V19H16.5977Z"
+                  fill="white"></path>
+              </g>
+              <defs>
+                <clipPath id="clip0_2202_1041">
+                  <rect
+                    width="24"
+                    height="24"
+                    fill="white"
+                    transform="translate(0.5)"></rect>
+                </clipPath>
+              </defs>
+            </svg>
+            <span>Pobierz pdf</span>
+          </a>
+        </div>
+        <div class="grid gap-4 text-center justify-center">
+          <h2 class="my-8">TAB</h2>
+          <div class="flex flex-wrap gap-4 mb-8">
+            <a class="tab">Tab nazwa</a>
+            <a class="tab">Tab nazwa</a>
+            <a class="tab">Tab nazwa</a>
+          </div>
+          <div class="flex flex-wrap gap-4">
+            <a class="tab small">Tab</a>
+            <a class="tab small inactive">Tab</a>
+            <a class="tab small inactive">Tab</a>
+            <a class="tab small inactive">Tab</a>
+            <a class="tab small inactive">Tab</a>
+            <a class="tab small inactive">Tab</a>
+          </div>
+        </div>
+        <div>
+          <h2 class="my-8 text-center">Form</h2>
+          <form
+            id="contact-form"
+            class="max-w-[488px] grid gap-4 contact-form mx-auto w-full"
+          >
+            <Input
+              id="name"
+              type="text"
+              name="name"
+              placeholder="Imię i nazwisko"
+              label="Imię i nazwisko"
+            />
+            <Input
+              id="company"
+              type="text"
+              name="company"
+              placeholder="Nazwa Firmy"
+              label="Nazwa Firmy"
+            />
+            <Input
+              id="email"
+              type="email"
+              name="email"
+              placeholder="E-mail"
+              label="E-mail"
+            />
+            <TextArea
+              id="message"
+              name="messagr"
+              placeholder="Treść wiadomości"
+              label="Treść wiadomości"
+            />
+            <select id="contact-select">
+              <option value="">Temat</option>
+              <option value="first">first</option>
+              <option value="second">second</option>
+              <option value="third">third</option>
+            </select>
+  
+            <div class="checkbox">
+              <label class="flex items-center cursor-pointer">
+                <input
+                  id="contactForm-agreement"
+                  class="custom-checkbox"
+                  name="agreement"
+                  type="checkbox"
+                />
+                Akceptuję politykę prywatności serwisu
+              </label>
+            </div>
+            <button class="btn primary w-full !max-w-full"
+              >Zapytaj o produkt</button
+            >
+          </form>
+  
+          <h2 class="my-8 text-center">Search</h2>
+          <form class="max-w-[488px] mx-auto">
+            <div class="search relative w-full mx-auto">
+              <svg
+                class="search-icon absolute left-6 top-4"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g clip-path="url(#clip0_2202_1394)">
+                  <path
+                    d="M1.47202 13.3569C1.93753 14.4522 2.61423 15.4452 3.46349 16.279C4.31274 17.1129 5.31791 17.7712 6.42162 18.2166C7.52532 18.662 8.70593 18.8856 9.89606 18.8747C11.0862 18.8638 12.2625 18.6186 13.3579 18.1531C14.4532 17.6875 15.4462 17.0108 16.28 16.1616C17.1138 15.3123 17.7722 14.3072 18.2176 13.2035C18.6629 12.0997 18.8865 10.9191 18.8756 9.72901C18.8647 8.53889 18.6195 7.36257 18.154 6.26721C17.6885 5.17185 17.0118 4.17891 16.1625 3.34508C15.3133 2.51124 14.3081 1.85285 13.2044 1.40748C12.1007 0.962114 10.9201 0.738499 9.72996 0.749404C8.53984 0.760308 7.36352 1.00552 6.26816 1.47103C5.17281 1.93655 4.17987 2.61325 3.34604 3.46251C2.5122 4.31176 1.85381 5.31694 1.40845 6.42064C0.963084 7.52435 0.739473 8.70496 0.750381 9.89509C0.761289 11.0852 1.0065 12.2615 1.47202 13.3569Z"
+                    stroke="#696464"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"></path>
+                  <path
+                    d="M16.2212 16.2197L23.2502 23.2497"
+                    stroke="#696464"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"></path>
+                </g>
+                <defs>
+                  <clipPath id="clip0_2202_1394">
+                    <rect width="24" height="24" fill="white"></rect>
+                  </clipPath>
+                </defs>
+              </svg>
+              <button class="arrow-icon absolute right-6 top-4">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g opacity="0.6" clip-path="url(#clip0_2202_1398)">
+                    <path
+                      d="M23.2208 12L0.756836 12"
+                      stroke="#232222"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"></path>
+                    <path
+                      d="M11.2568 23L22.8998 12.751C23.0062 12.6572 23.0915 12.5417 23.1498 12.4124C23.2082 12.2831 23.2384 12.1429 23.2384 12.001C23.2384 11.8591 23.2082 11.7189 23.1498 11.5896C23.0915 11.4603 23.0062 11.3448 22.8998 11.251L11.2568 1"
+                      stroke="#232222"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"></path>
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_2202_1398">
+                      <rect
+                        width="24"
+                        height="24"
+                        fill="white"
+                        transform="translate(0 24) rotate(-90)"></rect>
+                    </clipPath>
+                  </defs>
+                </svg>
+              </button>
+              <input
+                id="search"
+                type="text"
+                name="search"
+                placeholder="Szukaj"
+                class="w-full"
+              />
+            </div>
+          </form>
+        </div>
+        <div class="mb-40">
+          <div class="text-center max-w-[987px] mx-auto mb-20">
+            <h2 class="mb-8">Dlaczego my</h2>
+            <p class="big">
+              Korem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+              vulputate libero et velit interdum, ac aliquet odio mattis. Class
+              aptent taciti sociosqu ad litora torquent per conubia nostra, per
+              inceptos himenaeos. Curabitur tempus urna at turpis condimentum
+              lobortis.
+            </p>
+          </div>
+          <div class="grid md:grid-cols-3 gap-14">
+            <div class="max-w-[406px] grid justify-center text-center">
+              <div
+                class="bg-blue_opacity rounded-[100px] px-10 py-3 flex gap-2 items-center max-w-max mb-5 mx-auto"
+              >
+                <img src="/assets/icons/lab.svg" />
+  
+                <h3>Produktów</h3>
+              </div>
+              <p class="big text-grey md:px-3">
+                Doradzamy oraz dostarczamy najnowocześniejszy sprzęt
+                laboratoryjny, oprogramowanie, akcesoria i odczynniki.
+              </p>
+            </div>
+            <div class="max-w-[406px] grid justify-center text-center">
+              <div
+                class="bg-blue_opacity rounded-[100px] px-10 py-3 flex gap-2 items-center max-w-max mb-5 mx-auto"
+              >
+                <img src="/assets/icons/delivery.svg" />
+                <h3>Dostawców</h3>
+              </div>
+              <p class="big text-grey md:px-3">
+                Doradzamy oraz dostarczamy najnowocześniejszy sprzęt
+                laboratoryjny, oprogramowanie, akcesoria i odczynniki.
+              </p>
+            </div>
+            <div class="max-w-[406px] grid justify-center text-center">
+              <div
+                class="bg-blue_opacity rounded-[100px] px-10 py-3 flex gap-2 items-center max-w-max mb-5 mx-auto"
+              >
+                <img src="/assets/icons/blood-sample.svg" />
+                <h3>Lata na rynku</h3>
+              </div>
+              <p class="big text-grey md:px-3">
+                Doradzamy oraz dostarczamy najnowocześniejszy sprzęt
+                laboratoryjny, oprogramowanie, akcesoria i odczynniki.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="mb-40">
+          <div class="text-center max-w-[987px] mx-auto mb-20">
+            <h2 class="mb-8">Misja</h2>
+            <p class="big">
+              Korem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+              vulputate libero et velit interdum, ac aliquet odio mattis. Class
+              aptent taciti sociosqu ad litora torquent per conubia nostra, per
+              inceptos himenaeos. Curabitur tempus urna at turpis condimentum
+              lobortis.
+            </p>
+          </div>
+        </div>
+      </div>
+</Layout>
+<script is:inline src="/assets/js/custom-select.min.js"></script>
+<script is:inline src="/assets/js/main.js"></script>

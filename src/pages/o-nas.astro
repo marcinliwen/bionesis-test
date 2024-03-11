@@ -1,0 +1,248 @@
+---
+import Layout from "../layouts/Layout.astro";
+import HeaderTextBig from "../components/HeaderTextBig.astro";
+import HeaderText from "../components/HeaderText.astro";
+
+const headerAbout = {
+  h2: "O nas",
+  h3: "Morem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio.",
+};
+const headerMision = {
+  h2: "Misja",
+  p: "Korem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur tempus urna at turpis condimentum lobortis.",
+};
+const headerWhyUs = {
+  h2: "Dlaczego my",
+  p: "Korem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur tempus urna at turpis condimentum lobortis.",
+};
+const lab_info = [
+  "Innowacyjność i Rozwój",
+  "Zaangażowanie w Jakość",
+  "Współpraca i Wzajemne Zaufanie",
+  "Pasja do Służby Zdrowiu",
+];
+---
+
+<Layout title="O nas" isHome={false}>
+  <section class="pt-20 lg:pt-36 pb-12 lg:pb-36">
+    <div class="container wrapper max-w-[855px] mx-auto">
+      <HeaderTextBig
+        h2={headerAbout.h2}
+        h3={headerAbout.h3}
+        textColor="text-black"
+      />
+    </div>
+  </section>
+  <section>
+    <div class="bg_gradient_about_lab">
+      <img src="/assets/images/lab_2.png" />
+    </div>
+  </section>
+  <section class="pt-16 pb-20">
+    <div class="container wrapper">
+      <HeaderText h2={headerMision.h2} p={headerMision.p} />
+    </div>
+  </section>
+  <section class="pb-20">
+    <div class="container wrapper">
+      <div class="grid md:grid-cols-3 gap-14">
+        <div class="max-w-[406px] grid justify-center text-center mx-auto">
+          <div
+            class="rounded-full bg-blue_opacity w-[108px] h-[108px] mx-auto flex items-center justify-center mb-3"
+          >
+            <span class="text-[48px] leading-[58px]">90</span>
+          </div>
+          <div
+            class="bg-blue_opacity rounded-[100px] px-10 py-3 flex gap-2 items-center max-w-max mb-5 mx-auto"
+          >
+            <img src="/assets/icons/lab.svg" />
+
+            <h3>Produktów</h3>
+          </div>
+          <p class="big text-grey md:px-3">
+            Doradzamy oraz dostarczamy najnowocześniejszy sprzęt laboratoryjny,
+            oprogramowanie, akcesoria i odczynniki.
+          </p>
+        </div>
+        <div class="max-w-[406px] grid justify-center text-center mx-auto">
+          <div
+            class="rounded-full bg-blue_opacity w-[108px] h-[108px] mx-auto flex items-center justify-center mb-3"
+          >
+            <span class="text-[48px] leading-[58px]">20</span>
+          </div>
+
+          <div
+            class="bg-blue_opacity rounded-[100px] px-10 py-3 flex gap-2 items-center max-w-max mb-5 mx-auto"
+          >
+            <img src="/assets/icons/delivery.svg" />
+            <h3>Dostawców</h3>
+          </div>
+          <p class="big text-grey md:px-3">
+            Doradzamy oraz dostarczamy najnowocześniejszy sprzęt laboratoryjny,
+            oprogramowanie, akcesoria i odczynniki.
+          </p>
+        </div>
+        <div class="max-w-[406px] grid justify-center text-center mx-auto">
+          <div
+            class="rounded-full bg-blue_opacity w-[108px] h-[108px] mx-auto flex items-center justify-center mb-3"
+          >
+            <span class="text-[48px] leading-[58px]">4</span>
+          </div>
+
+          <div
+            class="bg-blue_opacity rounded-[100px] px-10 py-3 flex gap-2 items-center max-w-max mb-5 mx-auto"
+          >
+            <img src="/assets/icons/blood-sample.svg" />
+            <h3>Lata na rynku</h3>
+          </div>
+          <p class="big text-grey md:px-3">
+            Doradzamy oraz dostarczamy najnowocześniejszy sprzęt laboratoryjny,
+            oprogramowanie, akcesoria i odczynniki.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="pt-16 md:pt-36 pb-16 md:pb-20">
+    <div class="container wrapper">
+      <div class="grid md:grid-cols-2">
+        <div
+          class="bg_gradient_lab_3 bg_gradient_lab_3_second relative mb-12 md:mb-0 rounded-2xl overflow-hidden md:mr-8 max-w-[574px]"
+        >
+          <img src="/assets/images/lab_3.png" class="w-full object-cover" />
+        </div>
+        <div class="flex flex-col pb-10">
+          <h3 class="mb-12 mt-auto">
+            Doradzamy oraz dostarczamy najnowocześniejszy sprzęt laboratoryjny,
+            oprogramowanie, akcesoria i odczynniki.
+          </h3>
+
+          <ul class="flex flex-col gap-4 lg:gap-8 text-grey">
+            {
+              lab_info.map((item) => {
+                return (
+                  <li class="flex">
+                    <p class="big">{item}</p>
+                    <svg
+                      class="ml-auto w-6 h-6 lg:w-8 lg:h-8"
+                      width="32"
+                      height="33"
+                      viewBox="0 0 32 33"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <g opacity="0.6">
+                        <path
+                          d="M30.9613 16.5L1.00928 16.5"
+                          stroke="#232222"
+                          stroke-width="1.66667"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M15.0093 31.1665L30.5333 17.5012C30.6752 17.376 30.7888 17.2222 30.8666 17.0498C30.9444 16.8773 30.9847 16.6903 30.9847 16.5012C30.9847 16.312 30.9444 16.125 30.8666 15.9526C30.7888 15.7802 30.6752 15.6263 30.5333 15.5012L15.0093 1.83317"
+                          stroke="#232222"
+                          stroke-width="1.66667"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </g>
+                    </svg>
+                  </li>
+                );
+              })
+            }
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="pt-20 pb-20">
+    <div class="container wrapper">
+      <HeaderText h2={headerWhyUs.h2} p={headerWhyUs.p} />
+    </div>
+  </section>
+  <section class="pt-10 pb-36">
+    <div class="container wrapper">
+      <div
+        class="grid md:grid-cols-3 gap-x-10 gap-y-16 lg:gap-x-14 lg:gap-y-36"
+      >
+        <div class="max-w-[406px] grid justify-center text-center">
+          <div
+            class="bg-blue_opacity rounded-[100px] px-10 py-3 flex gap-2 items-center max-w-max mb-5 mx-auto"
+          >
+            <img src="/assets/icons/lab.svg" />
+
+            <h3>Produktów</h3>
+          </div>
+          <p class="big text-grey md:px-3">
+            Doradzamy oraz dostarczamy najnowocześniejszy sprzęt laboratoryjny,
+            oprogramowanie, akcesoria i odczynniki.
+          </p>
+        </div>
+        <div class="max-w-[406px] grid justify-center text-center">
+          <div
+            class="bg-blue_opacity rounded-[100px] px-10 py-3 flex gap-2 items-center max-w-max mb-5 mx-auto"
+          >
+            <img src="/assets/icons/delivery.svg" />
+            <h3>Dostawców</h3>
+          </div>
+          <p class="big text-grey md:px-3">
+            Doradzamy oraz dostarczamy najnowocześniejszy sprzęt laboratoryjny,
+            oprogramowanie, akcesoria i odczynniki.
+          </p>
+        </div>
+        <div class="max-w-[406px] grid justify-center text-center">
+          <div
+            class="bg-blue_opacity rounded-[100px] px-10 py-3 flex gap-2 items-center max-w-max mb-5 mx-auto"
+          >
+            <img src="/assets/icons/blood-sample.svg" />
+            <h3>Lata na rynku</h3>
+          </div>
+          <p class="big text-grey md:px-3">
+            Doradzamy oraz dostarczamy najnowocześniejszy sprzęt laboratoryjny,
+            oprogramowanie, akcesoria i odczynniki.
+          </p>
+        </div>
+        <div class="max-w-[406px] grid justify-center text-center">
+          <div
+            class="bg-blue_opacity rounded-[100px] px-10 py-3 flex gap-2 items-center max-w-max mb-5 mx-auto"
+          >
+            <img src="/assets/icons/lab.svg" />
+
+            <h3>Produktów</h3>
+          </div>
+          <p class="big text-grey md:px-3">
+            Doradzamy oraz dostarczamy najnowocześniejszy sprzęt laboratoryjny,
+            oprogramowanie, akcesoria i odczynniki.
+          </p>
+        </div>
+        <div class="max-w-[406px] grid justify-center text-center">
+          <div
+            class="bg-blue_opacity rounded-[100px] px-10 py-3 flex gap-2 items-center max-w-max mb-5 mx-auto"
+          >
+            <img src="/assets/icons/delivery.svg" />
+            <h3>Dostawców</h3>
+          </div>
+          <p class="big text-grey md:px-3">
+            Doradzamy oraz dostarczamy najnowocześniejszy sprzęt laboratoryjny,
+            oprogramowanie, akcesoria i odczynniki.
+          </p>
+        </div>
+        <div class="max-w-[406px] grid justify-center text-center">
+          <div
+            class="bg-blue_opacity rounded-[100px] px-10 py-3 flex gap-2 items-center max-w-max mb-5 mx-auto"
+          >
+            <img src="/assets/icons/blood-sample.svg" />
+            <h3>Lata na rynku</h3>
+          </div>
+          <p class="big text-grey md:px-3">
+            Doradzamy oraz dostarczamy najnowocześniejszy sprzęt laboratoryjny,
+            oprogramowanie, akcesoria i odczynniki.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+<script is:inline src="/assets/js/main.js"></script>
