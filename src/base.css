@@ -418,7 +418,6 @@ input:hover{
         z-index: 100;
         bottom: 0px;
         top: 0px;
-        padding-top: 16px;
         transition-duration: 500ms;
         transition-timing-function: ease-in-out;
         width: 100%;
