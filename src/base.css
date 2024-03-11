@@ -413,13 +413,20 @@ input:hover{
         left: 0;
     }
     .submenu-container{
-        position: static;
-        height: 0;
-        overflow: hidden;
-        transition: height 200ms ease-out;
+        position: fixed;
+        left: 100%;
+        z-index: 100;
+        bottom: 0px;
+        top: 0px;
+        padding-top: 16px;
+        transition-duration: 500ms;
+        transition-timing-function: ease-in-out;
+        width: 100%;
     }
     .submenu-container.open{
-        height: auto;
+        left:0;
+        transition-duration: 500ms;
+        transition-timing-function: ease-in-out;
     }
     @media(min-width:768px){
         .main-menu{
@@ -430,7 +437,7 @@ input:hover{
         .submenu-container{
             opacity: 0;
             visibility: hidden;
-            transition: all .2s ease;
+            transition: all .3s ease;
             z-index: 10;
             position: fixed;
             top: 80px;
@@ -439,11 +446,13 @@ input:hover{
             padding-top: 48px;
             padding-bottom: 56px;
             z-index: 10;
+            height: auto;
+            bottom: auto;
         }
         .submenu-container.open{
             opacity: 1;
             visibility: visible;
-            transition: all .2s ease;
+            transition: all .3s ease;
         }
     }
     @media(min-width:1024px) {

@@ -3,13 +3,57 @@ const menu = [
   {
     link: "/o-nas",
     name: "O nas",
+  },
+  {
+    link: "/produkty",
+    name: "Produkty",
     submenu: [
-      { name: "link pierwszy", link: "/" },
-      { name: "link drugi", link: "/" },
-      { name: "link trzeci", link: "/" },
+      {
+        name: "Nazwa kategorii",
+        link: "/",
+        subcategory: [
+          { name: "Nazwa produktu", link: "/produkt" },
+          { name: "Nazwa produktu", link: "/produkt" },
+          { name: "Nazwa produktu", link: "/produkt" },
+          { name: "Nazwa produktu", link: "/produkt" },
+          { name: "Nazwa produktu", link: "/produkt" },
+        ],
+      },
+      {
+        name: "Nazwa kategorii",
+        link: "/",
+        subcategory: [
+          { name: "Nazwa produktu", link: "/produkt" },
+          { name: "Nazwa produktu", link: "/produkt" },
+          { name: "Nazwa produktu", link: "/produkt" },
+          { name: "Nazwa produktu", link: "/produkt" },
+          { name: "Nazwa produktu", link: "/produkt" },
+        ],
+      },
+      {
+        name: "Nazwa kategorii",
+        link: "/",
+        subcategory: [
+          { name: "Nazwa produktu", link: "/produkt" },
+          { name: "Nazwa produktu", link: "/produkt" },
+          { name: "Nazwa produktu", link: "/produkt" },
+          { name: "Nazwa produktu", link: "/produkt" },
+          { name: "Nazwa produktu", link: "/produkt" },
+        ],
+      },
+      {
+        name: "Nazwa kategorii",
+        link: "/",
+        subcategory: [
+          { name: "Nazwa produktu", link: "/produkt" },
+          { name: "Nazwa produktu", link: "/produkt" },
+          { name: "Nazwa produktu", link: "/produkt" },
+          { name: "Nazwa produktu", link: "/produkt" },
+          { name: "Nazwa produktu", link: "/produkt" },
+        ],
+      },
     ],
   },
-  { link: "/produkty", name: "Produkty" },
   { link: "/aktualnosci", name: "Aktualności" },
   { link: "/kariera", name: "Kariera" },
   { link: "/kontakt", name: "Kontakt" },
@@ -36,7 +80,6 @@ import Logo from "../components/Logo.astro";
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
-           
             <path
               d="M13.3333 26.6667L26.6666 13.3333"
               stroke="#696464"
@@ -58,82 +101,132 @@ import Logo from "../components/Logo.astro";
             menu.map((item) => {
               if (item.submenu) {
                 return (
-                  <li class="group relative submenu-link md:py-[23px] w-full md:w-auto">
-                    <a href={item.link} class="regular py-2 md:py-0 link cursor-pointer flex gap-3 items-center">
-                        <span>{item.name}</span>
-                        <svg
-                        class="md:hidden group-has-[.open]:rotate-180 transition-all duration-200"
-                          width="24"
-                          height="24"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <rect width="24" height="24" fill="white" />
-                          <path
-                            d="M6 9L12 15L18 9"
-                            stroke="#2B2B2B"
-                            stroke-linecap="round"
-                          />
-                        </svg>
+                  <li class="group relative submenu-link md:py-4 w-full md:w-auto flex items-center">
+                    <a
+                      href={item.link}
+                      class="regular py-2 md:py-0 link cursor-pointer flex gap-3 items-center"
+                    >
+                      <span>{item.name}</span>
                     </a>
-                    <div class="bg-blue_opacity rounded-xl md:rounded-none md:bg-white text-grey md:border-t md:border-grey/40 submenu-container ">
-                      <div class="container md:px-8 lg:px-12">
-                        <div class="ml-auto flex justify-end gap-8">
-                          <ul class=" w-full max-w-[284px] flex flex-col md:gap-6">
+                    <button class="md:hidden ml-auto submenu-open">
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 32 32"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <g opacity="0.6" clip-path="url(#clip0_157_7136)">
+                          <path
+                            d="M30.9613 16L1.00928 16"
+                            stroke="#232222"
+                            stroke-width="1.66667"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M15.0093 30.6667L30.5333 17.0013C30.6752 16.8762 30.7888 16.7223 30.8666 16.5499C30.9444 16.3775 30.9847 16.1905 30.9847 16.0013C30.9847 15.8122 30.9444 15.6252 30.8666 15.4528C30.7888 15.2803 30.6752 15.1265 30.5333 15.0013L15.0093 1.33334"
+                            stroke="#232222"
+                            stroke-width="1.66667"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </g>
+                      </svg>
+                    </button>
+                    <div class="bg-blue_opacity md:bg-white text-grey md:border-t md:border-grey/40 submenu-container shadow-xl ">
+                      <div class="container md:px-4 ">
+                        <div class="ml-auto md:flex  justify-end gap-8">
+                          <button class="close-submenu absolute top-4 right-4 bg-blue_opacity md:hidden">
+                            <svg
+                              width="24"
+                              height="24"
+                              viewBox="0 0 32 32"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <g opacity="0.6" clip-path="url(#clip0_157_7138)">
+                                <path
+                                  d="M1.03872 16L30.9907 16"
+                                  stroke="#232222"
+                                  stroke-width="1.66667"
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                />
+                                <path
+                                  d="M16.9907 1.33334L1.46672 14.9987C1.32485 15.1238 1.21122 15.2777 1.13339 15.4501C1.05556 15.6225 1.01531 15.8095 1.01531 15.9987C1.01531 16.1878 1.05556 16.3748 1.13339 16.5473C1.21122 16.7197 1.32485 16.8735 1.46672 16.9987L16.9907 30.6667"
+                                  stroke="#232222"
+                                  stroke-width="1.66667"
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                />
+                              </g>
+                              <defs>
+                                <clipPath id="clip0_157_7138">
+                                  <rect
+                                    width="32"
+                                    height="32"
+                                    fill="white"
+                                    transform="translate(32) rotate(90)"
+                                  />
+                                </clipPath>
+                              </defs>
+                            </svg>
+                          </button>
+                          <ul class=" w-full block md:flex  md:gap-6 h-screen md:h-auto overflow-auto pt-8 pb-16 px-8">
                             {item.submenu.map((submenu) => {
                               return (
-                                <li class="w-full">
+                                <li class="w-full px-7 md:border-r border-disabled last:border-none pb-4 mb-8 md:mb-0">
                                   <a
                                     href={submenu.link}
-                                    class="flex items-center w-full rounded-3xl py-3 md:py-2 px-5 md:hover:bg-blue_opacity transition duration-200 ease-out md:active:bg-blue_hover"
+                                    class="flex items-center max-w-max mb-4 md:mb-8 link hover:text-blue_active"
                                   >
-                                    <span>{submenu.name}</span>
-                                    <svg
-                                    class=" w-4 h-4 ml-auto"
-                                      width="24"
-                                      height="24"
-                                      viewBox="0 0 24 24"
-                                      fill="none"
-                                      xmlns="http://www.w3.org/2000/svg"
-                                      class="ml-auto"
-                                    >
-                                      <g
-                                        opacity="0.6"
-                                        clip-path="url(#clip0_183_20906)"
-                                      >
-                                        <path
-                                          d="M23.2199 12L0.755859 12"
-                                          stroke="#232222"
-                                          stroke-width="1.66667"
-                                          stroke-linecap="round"
-                                          stroke-linejoin="round"
-                                        />
-                                        <path
-                                          d="M11.2578 23L22.9008 12.751C23.0072 12.6572 23.0924 12.5417 23.1508 12.4124C23.2092 12.2831 23.2394 12.1429 23.2394 12.001C23.2394 11.8591 23.2092 11.7189 23.1508 11.5896C23.0924 11.4603 23.0072 11.3448 22.9008 11.251L11.2578 1"
-                                          stroke="#232222"
-                                          stroke-width="1.66667"
-                                          stroke-linecap="round"
-                                          stroke-linejoin="round"
-                                        />
-                                      </g>
-                                      <defs>
-                                        <clipPath id="clip0_183_20906">
-                                          <rect
-                                            width="24"
-                                            height="24"
-                                            fill="white"
-                                            transform="translate(0 24) rotate(-90)"
-                                          />
-                                        </clipPath>
-                                      </defs>
-                                    </svg>
+                                    <p>{submenu.name}</p>
                                   </a>
+                                  {submenu.subcategory && (
+                                    <ul class="grid gap-2">
+                                      {submenu.subcategory.map((item) => {
+                                        return (
+                                          <li>
+                                            <a
+                                              href={item.link}
+                                              class="flex justify-between items-center py-2 md:py-0 md:hover:text-blue_active"
+                                            >
+                                              <p class="small">{item.name} </p>
+                                              <svg
+                                                width="10"
+                                                height="11"
+                                                viewBox="0 0 10 11"
+                                                fill="none"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                              >
+                                                <g clip-path="url(#clip0_269_7108)">
+                                                  <path
+                                                    d="M9.67641 5.5L0.316406 5.5"
+                                                    stroke="currentColor"
+                                                    stroke-width="1.66667"
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                  />
+                                                  <path
+                                                    d="M4.69141 10.084L9.54266 5.81357C9.58699 5.77447 9.6225 5.72638 9.64682 5.6725C9.67115 5.61862 9.68372 5.56018 9.68372 5.50107C9.68372 5.44195 9.67115 5.38351 9.64682 5.32963C9.6225 5.27576 9.58699 5.22767 9.54266 5.18857L4.69141 0.917317"
+                                                    stroke="currentColor"
+                                                    stroke-width="1.66667"
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                  />
+                                                </g>
+                                              </svg>
+                                            </a>
+                                          </li>
+                                        );
+                                      })}
+                                    </ul>
+                                  )}
                                 </li>
                               );
                             })}
                           </ul>
-                          <img class="hidden md:block" src="/assets/images/menu_img.png" />
                         </div>
                       </div>
                     </div>
@@ -141,7 +234,7 @@ import Logo from "../components/Logo.astro";
                 );
               } else {
                 return (
-                  <li class="relative z-20  md:py-[23px] w-full md:w-auto">
+                  <li class="relative z-20  md:py-4 w-full md:w-auto">
                     <a
                       href={item.link}
                       class={` regular py-2 md:py-0 block ${
@@ -157,12 +250,9 @@ import Logo from "../components/Logo.astro";
           }
         </ul>
       </nav>
-      <button
-        id="open-menu"
-        class="md:hidden h-12 w-14 -mr-4"
-      >
+      <button id="open-menu" class="md:hidden h-12 w-14 -mr-4">
         <svg
-        class="w-full h-full"
+          class="w-full h-full"
           viewBox="-2.4 -2.4 28.80 28.80"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"

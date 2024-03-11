@@ -69,22 +69,29 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     function submenuHandler() {
-        const submenuLink = document.querySelector('.submenu-link');
+        const desctopLink = document.querySelector('.submenu-link')
+        const submenuLink = document.querySelector('.submenu-link button');
+        const closeSubmenu = document.querySelector('.close-submenu')
         const o = document.body;
-        if (submenuLink && !isMobile) {
-            submenuLink.addEventListener('mouseover', (e) => {
+        if (desctopLink && !isMobile) {
+            desctopLink.addEventListener('mouseover', (e) => {
                 e.currentTarget.querySelector('.submenu-container').classList.add('open')
                 o.classList.add('menu-hovered')
             });
-            submenuLink.addEventListener('mouseleave', (e) => {
+            desctopLink.addEventListener('mouseleave', (e) => {
                 e.currentTarget.querySelector('.submenu-container').classList.remove('open')
                 o.classList.remove('menu-hovered')
             })
         }
         if (submenuLink && isMobile) {
             submenuLink.addEventListener('click', (e) => {
-                e.currentTarget.querySelector('.submenu-container').classList.toggle('open')
-                console.log(e.currentTarget.querySelector('.submenu-container'))
+                e.preventDefault()
+                e.currentTarget.parentNode.querySelector('.submenu-container').classList.toggle('open')
+            })
+            closeSubmenu.addEventListener('click', (e)=>{
+                e.preventDefault()
+                e.currentTarget.parentNode.parentNode.parentNode.classList.toggle('open')
+                console.log('parent node ',e.currentTarget.parentNode.parentNode.parentNode)
             })
         }
     }
