@@ -99,10 +99,10 @@
         line-height: 160%;
     }
 
-    button:disabled {
+    /* button:disabled {
         background: rgba(203, 209, 221, 1);
         color: #696464;
-    }
+    } */
     
     @media(min-width: 1024px){
         h1,
@@ -162,11 +162,11 @@
         color: #fff;
     }
 
-    button.btn:disabled,
+    /* button.btn:disabled,
     button:disabled {
         background: rgba(203, 209, 221, 1);
         color: #696464;
-    }
+    } */
 
     .btn.primary.dot {
         position: relative;
@@ -855,3 +855,16 @@ z-index: 2;
 .product_thumb_slider .swiper-slide-thumb-active {
     opacity: 1;
   }
+.article-content img{
+    border-radius: 16px;
+}
+.article-content cite{
+    background: #D8F2FC;
+    padding: 48px;
+    font-size: 28px;
+    line-height: 160%;
+    color:#232222;
+    font-style: normal;
+    display: block;
+    border-radius: 16px;
+}

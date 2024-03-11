@@ -167,4 +167,22 @@ document.addEventListener("DOMContentLoaded", function () {
         },
       });
     }
+
+    var swiperArticles = new Swiper('.swiper_articles',{
+        slidesPerView: 1,
+        spaceBetween: 40,
+        navigation: {
+            nextEl: '.swiper-articles-next',
+            prevEl: '.swiper-articles-prev',
+          },
+          breakpoints: {
+            768: {
+                slidesPerView: 2,
+            },
+            1024: {
+                slidesPerView: 3
+            }
+        }
+        
+    })
 })
