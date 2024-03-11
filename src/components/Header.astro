@@ -24,11 +24,11 @@ import Logo from "../components/Logo.astro";
 <header
   class=`fixed top-0 left-0 right-0 header  z-50 transition duration-200 ease-out ${isHome ? 'is-home':''}`
 >
-  <div class="container wrapper">
+  <div class="container wrapper py-2 px-4 md:px-8 md:py-0">
     <div class="flex items-center justify-between">
       <Logo />
       <nav class="main-nav main-menu">
-        <button id="close-menu" class="absolute top-10 right-14 md:hidden"
+        <button id="close-menu" class="absolute top-4 right-4 md:hidden"
           ><svg
             width="40"
             height="40"
@@ -36,12 +36,7 @@ import Logo from "../components/Logo.astro";
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <path
-              d="M2.5 20C2.5 24.6413 4.34374 29.0925 7.62563 32.3744C10.9075 35.6563 15.3587 37.5 20 37.5C24.6413 37.5 29.0925 35.6563 32.3744 32.3744C35.6563 29.0925 37.5 24.6413 37.5 20C37.5 15.3587 35.6563 10.9075 32.3744 7.62563C29.0925 4.34374 24.6413 2.5 20 2.5C15.3587 2.5 10.9075 4.34374 7.62563 7.62563C4.34374 10.9075 2.5 15.3587 2.5 20Z"
-              stroke="#696464"
-              stroke-width="1.66667"
-              stroke-linecap="round"
-              stroke-linejoin="round"></path>
+           
             <path
               d="M13.3333 26.6667L26.6666 13.3333"
               stroke="#696464"
@@ -164,7 +159,7 @@ import Logo from "../components/Logo.astro";
       </nav>
       <button
         id="open-menu"
-        class="md:hidden h-12 w-14"
+        class="md:hidden h-12 w-14 -mr-4"
       >
         <svg
         class="w-full h-full"
