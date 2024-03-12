@@ -886,3 +886,34 @@ z-index: 2;
     display: block;
     border-radius: 16px;
 }
+
+.hero-slider .slide-up{
+    opacity: 0;
+  transform: translate3d(0px, 50px, 0);
+  will-change: transform;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transition-property: transform, opacity;
+  transition-duration: 1000ms;
+  transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+  
+}
+.hero-slider .swiper-slide-visible.swiper-slide-active .slide-up{
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  transition-delay: 1000ms;
+}
+.inView.slideUp {
+    opacity: 0;
+    transform: translate3d(0, 50px, 0);
+    will-change: transform;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    transition-property: transform, opacity;
+    transition-duration: 1s;
+    transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+  }
+  .inView.is_visible.slideUp {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }

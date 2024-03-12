@@ -184,6 +184,16 @@ document.addEventListener("DOMContentLoaded", function () {
             }
     
         })
+        const heroSlider = new Swiper('.hero-slider',{
+            slidesPerView: 1,
+            speed: 2500,
+            effect: "fade",
+            loop: true,
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+              },
+        })
     }
 
     
@@ -258,5 +268,30 @@ document.addEventListener("DOMContentLoaded", function () {
     
     
     }
+    /**
+   * Intersection Observer
+   */
+  let options = {
+    threshold: 0.25,
+  };
+  let callback = (entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.intersectionRatio >= 0.25) {
+        entry.target.classList.add("is_visible");
+      } else {
+        entry.target.classList.remove("is_visible");
+      }
+      if (entry.isIntersecting) {
+        observer.unobserve(entry.target);
+      }
+    });
+  };
+  let observer = new IntersectionObserver(callback, options);
+  const inViews = document.querySelectorAll(".inView");
+  if (inViews.length > 0) {
+    inViews.forEach((inView) => {
+      observer.observe(inView);
+    });
+  }
 
 })

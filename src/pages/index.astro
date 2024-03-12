@@ -21,21 +21,36 @@ const lab_info = [
   "Współpraca i Wzajemne Zaufanie",
   "Pasja do Służby Zdrowiu",
 ];
+
+const heroSLides = [1, 2, 3];
 ---
 
 <Layout title="Bionesis" isHome={true}>
   <main>
-    <section class="relative h-dvh">
-      <div
-        class="h-full flex flex-col justify-center items-center relative z-10 text-white max-w-[855px] mx-auto"
-      >
-        <h1 class="mb-7 text-center">Bionesis - equipment that matters</h1>
-        <p class="h3 mb-7 text-center">
-          Doradzamy oraz dostarczamy najnowocześniejszy sprzęt laboratoryjny,
-          oprogramowanie, akcesoria i odczynniki.
-        </p>
-        <a class="btn primary dot">Dowiedz się więcej</a>
+    <section class="relative h-lvh">
+      <div class="swiper hero-slider h-full">
+        <div class="swiper-wrapper h-full">
+          {
+            heroSLides.map((item) => {
+              return (
+                <div class="h-full swiper-slide">
+                <div class="h-full flex flex-col justify-center items-center relative z-10 text-white max-w-[855px] mx-auto slide-up">
+                  <h1 class="mb-7 text-center">
+                    Bionesis {item} - equipment that matters
+                  </h1>
+                  <p class="h3 mb-7 text-center">
+                    Doradzamy oraz dostarczamy najnowocześniejszy sprzęt
+                    laboratoryjny, oprogramowanie, akcesoria i odczynniki.
+                  </p>
+                  <a class="btn primary dot">Dowiedz się więcej</a>
+                </div>
+                </div>
+              );
+            })
+          }
+        </div>
       </div>
+
       <div class="hergo-gradient !absolute inset-0">
         <img
           src="/assets/images/home_hero.jpeg"
@@ -44,7 +59,7 @@ const lab_info = [
       </div>
     </section>
     <section class="pt-28 pb-20">
-      <div class="container wrapper">
+      <div class="container wrapper inView slideUp">
         <HeaderTextBig
           h2={header_one.h2}
           h3={header_one.h3}
@@ -62,7 +77,7 @@ const lab_info = [
       </div>
       <div class="container wrapper relative z-10">
         <div
-          class="flex flex-wrap lg:flex-nowrap items-center text-white gap-12 max-w-[1060px] mx-auto"
+          class="flex flex-wrap lg:flex-nowrap items-center text-white gap-12 max-w-[1060px] mx-auto inView slideUp"
         >
           <svg
             class="min-w-[94px]"
@@ -104,17 +119,17 @@ const lab_info = [
             />
           </div>
           <div>
-            <h3 class="mb-6">
+            <h3 class="mb-6 inView slideUp">
               Doradzamy oraz dostarczamy najnowocześniejszy sprzęt
               laboratoryjny, oprogramowanie, akcesoria.
             </h3>
-            <p class="big mb-10 text-grey">
+            <p class="big mb-10 text-grey inView slideUp">
               Korem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
               vulputate libero et velit interdum, ac aliquet odio mattis. Class
               aptent taciti sociosqu ad litora torquent per conubia nostra, per
               inceptos himenaeos. Curabitur tempus urna at turpis.
             </p>
-            <ul class="grid gap-4 lg:gap-10 text-grey mb-12">
+            <ul class="grid gap-4 lg:gap-10 text-grey mb-12 inView slideUp">
               {
                 lab_info.map((item) => {
                   return (
@@ -150,7 +165,7 @@ const lab_info = [
                 })
               }
             </ul>
-            <a class="btn primary dot mx-auto md:ml-0">Dowiedz się więcej</a>
+            <a class="btn primary dot mx-auto md:ml-0 inView slideUp">Dowiedz się więcej</a>
           </div>
         </div>
       </div>
@@ -159,28 +174,29 @@ const lab_info = [
       <div class="container wrapper">
         <HeaderTextBig h2={header_partners.h2} h3={header_partners.h3} />
 
-          <div class="flex overflow-auto snap-mandatory snap-x hide-scrollbar">
-            <img
-              src="/assets/images/partner_1.png"
-              class="saturate-0 hover:saturate-100 transition-all duration-400 ease-out cursor-pointer snap-center"
-            />
-            <img
-              src="/assets/images/partner_2.png"
-              class="saturate-0 hover:saturate-100 transition-all duration-400 ease-out cursor-pointer snap-center"
-            />
-            <img
-              src="/assets/images/partner_1.png"
-              class="saturate-0 hover:saturate-100 transition-all duration-400 ease-out cursor-pointer snap-center"
-            />
-            <img
-              src="/assets/images/partner_2.png"
-              class="saturate-0 hover:saturate-100 transition-all duration-400 ease-out cursor-pointer snap-center"
-            />
-          </div>
-     
+        <div class="flex overflow-auto snap-mandatory snap-x hide-scrollbar">
+          <img
+            src="/assets/images/partner_1.png"
+            class="saturate-0 hover:saturate-100 transition-all duration-400 ease-out cursor-pointer snap-center"
+          />
+          <img
+            src="/assets/images/partner_2.png"
+            class="saturate-0 hover:saturate-100 transition-all duration-400 ease-out cursor-pointer snap-center"
+          />
+          <img
+            src="/assets/images/partner_1.png"
+            class="saturate-0 hover:saturate-100 transition-all duration-400 ease-out cursor-pointer snap-center"
+          />
+          <img
+            src="/assets/images/partner_2.png"
+            class="saturate-0 hover:saturate-100 transition-all duration-400 ease-out cursor-pointer snap-center"
+          />
+        </div>
       </div>
     </section>
   </main>
 </Layout>
+<script is:inline src="/assets/js/swiper-bundle.min.js"></script>
+<link rel="stylesheet" href="/assets/css/swiper-bundle.min.css" />
 <script is:inline src="/assets/js/custom-select.min.js"></script>
 <script is:inline src="/assets/js/main.js"></script>

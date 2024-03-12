@@ -154,7 +154,7 @@ const articleList = [
         {
           articleList.map((article) => {
             return (
-              <article>
+              <article class="inView slideUp">
                 <img src={article.img} class="rounded-2xl mb-6" />
                 <div>
                   <p class="text-gre mb-6">{article.autor}</p>
@@ -183,7 +183,7 @@ const articleList = [
     </div>
     <div class="container wrapper relative z-10">
       <div
-        class="flex flex-wrap lg:flex-nowrap items-center text-white gap-12 max-w-[1060px] mx-auto"
+        class="flex flex-wrap lg:flex-nowrap items-center text-white gap-12 max-w-[1060px] mx-auto inView slideUp"
       >
         <svg
           class="min-w-[94px]"
@@ -218,7 +218,7 @@ const articleList = [
       <div
         class="grid md:grid-cols-3 gap-x-10 gap-y-16 lg:gap-x-14 lg:gap-y-36"
       >
-        <div class="max-w-[406px] grid justify-center text-center">
+        <div class="max-w-[406px] grid justify-center text-center inView slideUp">
           <div
             class="bg-blue_opacity rounded-[100px] px-10 py-3 flex gap-2 items-center max-w-max mb-5 mx-auto"
           >
@@ -231,7 +231,7 @@ const articleList = [
             oprogramowanie, akcesoria i odczynniki.
           </p>
         </div>
-        <div class="max-w-[406px] grid justify-center text-center">
+        <div class="max-w-[406px] grid justify-center text-center inView slideUp">
           <div
             class="bg-blue_opacity rounded-[100px] px-10 py-3 flex gap-2 items-center max-w-max mb-5 mx-auto"
           >
@@ -243,7 +243,7 @@ const articleList = [
             oprogramowanie, akcesoria i odczynniki.
           </p>
         </div>
-        <div class="max-w-[406px] grid justify-center text-center">
+        <div class="max-w-[406px] grid justify-center text-center inView slideUp">
           <div
             class="bg-blue_opacity rounded-[100px] px-10 py-3 flex gap-2 items-center max-w-max mb-5 mx-auto"
           >
