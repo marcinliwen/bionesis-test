@@ -1,6 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import HeaderTextBig from "../components/HeaderTextBig.astro";
+import Input from '../components/Input.astro'
+import TextArea from '../components/TextArea.astro'
 
 const headerKariera = {
   h2: "Web designer remote",
@@ -83,7 +85,82 @@ const header_partners = {
             per inceptos himenaeos.
           </li>
         </ul>
-        <button class="btn primary dot">Aplikuj na tę ofertę</button>
+        <button class="btn primary dot modal-trigger" data-modal="recap-video-modal">Aplikuj na tę ofertę</button>
+
+        <div class="modal recap-video-modal">
+            <div class="modal__content">
+                <button class="close-icon modal-close">
+                    <svg width="40" height="41" viewBox="0 0 40 41" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M2.5 20.5C2.5 25.1413 4.34374 29.5925 7.62563 32.8744C10.9075 36.1563 15.3587 38 20 38C24.6413 38 29.0925 36.1563 32.3744 32.8744C35.6563 29.5925 37.5 25.1413 37.5 20.5C37.5 15.8587 35.6563 11.4075 32.3744 8.12563C29.0925 4.84374 24.6413 3 20 3C15.3587 3 10.9075 4.84374 7.62563 8.12563C4.34374 11.4075 2.5 15.8587 2.5 20.5Z" stroke="#696464" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M13.333 27.1663L26.6663 13.833" stroke="#696464" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M26.6663 27.1663L13.333 13.833" stroke="#696464" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        
+                    </button>
+              <div  class="container wrapper  h-[80vh]  pt-16 pb-16 relative ">
+                <div class=" h-full mx-auto overflow-auto scroller">
+                  <h3 class="text-center mb-10">
+                    Web designer remote
+                  </h3>
+                  <form
+                id="contact-form"
+                class="max-w-[516px] grid gap-4 contact-form  w-full mx-auto"
+              >
+                <Input
+                  id="name"
+                  type="text"
+                  name="name"
+                  placeholder="Imię i nazwisko"
+                  label="Imię i nazwisko"
+                />
+                <Input
+                  id="email"
+                  type="email"
+                  name="email"
+                  placeholder="E-mail"
+                  label="E-mail"
+                />
+                <TextArea
+                  id="message"
+                  name="messagr"
+                  placeholder="Treść wiadomości"
+                  label="Treść wiadomości"
+                />
+                
+      
+                <div class="checkbox">
+                  <label class="flex  cursor-pointer">
+                    <input
+                      id="contactForm-agreement"
+                      class="custom-checkbox mt-1"
+                      name="agreement"
+                      type="checkbox"
+                    />
+                    Yorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.
+                  </label>
+                </div>
+                <div class="checkbox">
+                    <label class="flex  cursor-pointer">
+                      <input
+                        id="contactForm-agreement"
+                        class="custom-checkbox mt-1"
+                        name="agreement"
+                        type="checkbox"
+                      />
+                      Yorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.
+                    </label>
+                  </div>
+                 
+                <button type="button" class="btn primary w-full !max-w-full"
+                  >Aplikuj na tę ofertę pracy</button
+                >
+              </form>
+                  
+                </div>
+              </div>
+            </div>
+           
+          </div>
       </div>
     </div>
   </section>
@@ -197,4 +274,7 @@ const header_partners = {
     </div>
   </section>
 </Layout>
+<script is:inline src="/assets/js/custom-select.min.js"></script>
+
+<link rel="stylesheet" href="/assets/css/modal.css" />
 <script is:inline src="/assets/js/main.js"></script>

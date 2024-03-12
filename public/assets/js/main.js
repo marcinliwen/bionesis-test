@@ -88,10 +88,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 e.preventDefault()
                 e.currentTarget.parentNode.querySelector('.submenu-container').classList.toggle('open')
             })
-            closeSubmenu.addEventListener('click', (e)=>{
+            closeSubmenu.addEventListener('click', (e) => {
                 e.preventDefault()
                 e.currentTarget.parentNode.parentNode.parentNode.classList.toggle('open')
-                console.log('parent node ',e.currentTarget.parentNode.parentNode.parentNode)
+                console.log('parent node ', e.currentTarget.parentNode.parentNode.parentNode)
             })
         }
     }
@@ -138,51 +138,73 @@ document.addEventListener("DOMContentLoaded", function () {
 
         function tabNavEvent(tabNav, nextTab) {
             tabNav.forEach(tab => {
-                tab.dataset.tab_target === nextTab 
-                ? tab.classList.add('active') 
-                : tab.classList.contains('active') && tab.classList.remove('active')
+                tab.dataset.tab_target === nextTab
+                    ? tab.classList.add('active')
+                    : tab.classList.contains('active') && tab.classList.remove('active')
             })
         }
         function tabcontentEvent(tabContentList, nextTab) {
             tabContentList.forEach(tabContent => {
-              tabContent.dataset.tab_content === nextTab
-                ? tabContent.classList.add('show')
-                : tabContent.classList.contains('show') && tabContent.classList.remove('show')
+                tabContent.dataset.tab_content === nextTab
+                    ? tabContent.classList.add('show')
+                    : tabContent.classList.contains('show') && tabContent.classList.remove('show')
             })
         }
     }
     tabsHandler()
 
     if (typeof Swiper !== 'undefined') {
-    var swiper = new Swiper(".product_thumb_slider", {
-        spaceBetween: 24,
-        slidesPerView: 4,
-       
-        watchSlidesProgress: true,
-      });
-      var swiper2 = new Swiper(".product_swiper", {
-        
-        thumbs: {
-          swiper: swiper,
-        },
-      });
+        var swiper = new Swiper(".product_thumb_slider", {
+            spaceBetween: 24,
+            slidesPerView: 4,
+
+            watchSlidesProgress: true,
+        });
+        var swiper2 = new Swiper(".product_swiper", {
+
+            thumbs: {
+                swiper: swiper,
+            },
+        });
+
+        var swiperArticles = new Swiper('.swiper_articles', {
+            slidesPerView: 1,
+            spaceBetween: 40,
+            navigation: {
+                nextEl: '.swiper-articles-next',
+                prevEl: '.swiper-articles-prev',
+            },
+            breakpoints: {
+                768: {
+                    slidesPerView: 2,
+                },
+                1024: {
+                    slidesPerView: 3
+                }
+            }
+    
+        })
     }
 
-    var swiperArticles = new Swiper('.swiper_articles',{
-        slidesPerView: 1,
-        spaceBetween: 40,
-        navigation: {
-            nextEl: '.swiper-articles-next',
-            prevEl: '.swiper-articles-prev',
-          },
-          breakpoints: {
-            768: {
-                slidesPerView: 2,
-            },
-            1024: {
-                slidesPerView: 3
-            }
+    
+
+    /**
+  * modals
+  */
+    const modals = document.getElementsByClassName("modal");
+    if(modals.length > 0){
+        const triggers = document.getElementsByClassName("modal-trigger");
+        const triggerArray = Array.from(triggers).entries();
+    
+        const closeButtons = document.getElementsByClassName("modal-close");
+        for (let [index, trigger] of triggerArray) {
+            const toggleModal = () => {
+                modals[index].classList.toggle("modal--is-open");
+                document.body.classList.toggle("overflow-hidden")
+            };
+            trigger.addEventListener("click", toggleModal);
+            closeButtons[index].addEventListener("click", toggleModal);
         }
-        
-    })
+    }
+    
 })

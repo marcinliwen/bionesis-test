@@ -162,6 +162,10 @@
         color: #fff;
     }
 
+    .btn.secondary{
+        border: 1px solid #00709F;
+        color:#00709F;
+    }
     /* button.btn:disabled,
     button:disabled {
         background: rgba(203, 209, 221, 1);
@@ -714,7 +718,8 @@ input[type=checkbox].custom-checkbox {
     cursor: pointer;
     transition: all cubic-bezier(.53,0,.43,1) .3s;
     position: relative;
-    margin-right: 16px
+    margin-right: 16px;
+    min-width: 24px;
 }
 
 input[type=checkbox].custom-checkbox:before {
