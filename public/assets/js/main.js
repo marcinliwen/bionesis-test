@@ -279,7 +279,13 @@ document.addEventListener("DOMContentLoaded", function () {
   let callback = (entries, observer) => {
     entries.forEach((entry) => {
       if (entry.intersectionRatio >= 0.25) {
-        entry.target.classList.add("is_visible");
+        let delay = entry.target.dataset.delay;
+       
+        if(delay){ console.log('delay',entry.target.dataset.delay)}
+        setTimeout(()=>{
+            entry.target.classList.add("is_visible");
+        },delay ? delay: '0')
+        
       } else {
         entry.target.classList.remove("is_visible");
       }
