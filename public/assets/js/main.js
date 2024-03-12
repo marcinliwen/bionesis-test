@@ -191,7 +191,7 @@ document.addEventListener("DOMContentLoaded", function () {
             loop: true,
             autoplay: {
                 delay: 2500,
-                disableOnInteraction: false,
+                disableOnInteraction: true,
               },
         })
     }
@@ -216,6 +216,8 @@ document.addEventListener("DOMContentLoaded", function () {
             closeButtons[index].addEventListener("click", toggleModal);
         }
     }
+
+
     let counterTargets = document.querySelectorAll(".counterUp");
 
     let observerCounter = new IntersectionObserver((entries, observer) => {

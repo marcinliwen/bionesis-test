@@ -624,7 +624,8 @@ body.menu-hovered header .link{
     position: absolute;
     top: 100%;
     z-index: 1;
-    width: 100%
+    width: 100%; 
+    filter:drop-shadow(3px 6px 4px #00000061);
 }
 
 .custom-select-panel::-webkit-scrollbar {
