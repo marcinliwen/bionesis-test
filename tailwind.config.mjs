@@ -21,6 +21,7 @@ export default {
 				disabled: '#CBD1DD',
 				grey: '#696464',
 				neutral: '#FAFAFA',
+				green:'#47B982'
 
 			}
 		},
