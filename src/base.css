@@ -594,7 +594,6 @@ body.menu-hovered header .link{
     line-height: 22px;
     color: #fff;
     width: 100%;
-    max-width: 594px;
     transition-duration: .3s;
     transition-timing-function: ease-in-out;
     background-color: #fff;
@@ -841,6 +840,20 @@ z-index: 2;
     background: linear-gradient(180deg, rgba(3, 70, 125, 0.6) 0%, rgba(27, 69, 91, 0.6) 100%);
     mix-blend-mode: hard-light;
 
+}
+.contakt-gradient{
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+}
+.contakt-gradient:after{
+    content:'';
+    position: absolute;
+    inset: 0;
+    display: block;
+    z-index: 2;
+    background: linear-gradient(89.76deg, rgba(0, 29, 90, 0.8) 0.22%, rgba(15, 141, 174, 0) 100.86%);
+    mix-blend-mode: hard-light;
 }
 @media(min-width: 768px){
     .hergo-gradient:after{ 
