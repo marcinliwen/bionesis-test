@@ -2,7 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import HeaderTextBig from "../components/HeaderTextBig.astro";
 import HeaderText from "../components/HeaderText.astro";
-
+import Numbers from "../components/Numbers.astro";
 const headerCategoryt = {
   h2: "Kategorie",
   h3: "Opis ogólny o kategoriach produktów",
@@ -180,65 +180,6 @@ const headerWhyUs = {
           <HeaderText h2={headerWhyUs.h2} p={headerWhyUs.p} />
         </div>
       </section>
-      <section class="pb-20">
-        <div class="container wrapper">
-          <div class="grid md:grid-cols-3 gap-14">
-            <div class="max-w-[406px] grid justify-center text-center mx-auto">
-              <div
-                class="rounded-full bg-blue_opacity w-[108px] h-[108px] mx-auto flex items-center justify-center mb-3"
-              >
-                <span class="text-[48px] leading-[58px]">90</span>
-              </div>
-              <div
-                class="bg-blue_opacity rounded-[100px] px-10 py-3 flex gap-2 items-center max-w-max mb-5 mx-auto"
-              >
-                <img src="/assets/icons/lab.svg" />
-    
-                <h3>Produktów</h3>
-              </div>
-              <p class="big text-grey md:px-3">
-                Doradzamy oraz dostarczamy najnowocześniejszy sprzęt laboratoryjny,
-                oprogramowanie, akcesoria i odczynniki.
-              </p>
-            </div>
-            <div class="max-w-[406px] grid justify-center text-center mx-auto">
-              <div
-                class="rounded-full bg-blue_opacity w-[108px] h-[108px] mx-auto flex items-center justify-center mb-3"
-              >
-                <span class="text-[48px] leading-[58px]">20</span>
-              </div>
-    
-              <div
-                class="bg-blue_opacity rounded-[100px] px-10 py-3 flex gap-2 items-center max-w-max mb-5 mx-auto"
-              >
-                <img src="/assets/icons/delivery.svg" />
-                <h3>Dostawców</h3>
-              </div>
-              <p class="big text-grey md:px-3">
-                Doradzamy oraz dostarczamy najnowocześniejszy sprzęt laboratoryjny,
-                oprogramowanie, akcesoria i odczynniki.
-              </p>
-            </div>
-            <div class="max-w-[406px] grid justify-center text-center mx-auto">
-              <div
-                class="rounded-full bg-blue_opacity w-[108px] h-[108px] mx-auto flex items-center justify-center mb-3"
-              >
-                <span class="text-[48px] leading-[58px]">4</span>
-              </div>
-    
-              <div
-                class="bg-blue_opacity rounded-[100px] px-10 py-3 flex gap-2 items-center max-w-max mb-5 mx-auto"
-              >
-                <img src="/assets/icons/blood-sample.svg" />
-                <h3>Lata na rynku</h3>
-              </div>
-              <p class="big text-grey md:px-3">
-                Doradzamy oraz dostarczamy najnowocześniejszy sprzęt laboratoryjny,
-                oprogramowanie, akcesoria i odczynniki.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <Numbers />
 </Layout>
 <script is:inline src="/assets/js/main.js"></script>
