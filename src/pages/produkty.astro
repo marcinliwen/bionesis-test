@@ -53,6 +53,26 @@ const category = [
         img: '/assets/images/category_1.png',
         name: 'Kategoria',
         link: '/produkty'
+    },
+    {
+        img: '/assets/images/category_1.png',
+        name: 'Kategoria',
+        link: '/produkty'
+    },
+    {
+        img: '/assets/images/category_1.png',
+        name: 'Kategoria',
+        link: '/produkty'
+    },
+    {
+        img: '/assets/images/category_1.png',
+        name: 'Kategoria',
+        link: '/produkty'
+    },
+    {
+        img: '/assets/images/category_1.png',
+        name: 'Kategoria',
+        link: '/produkty'
     }
 ]
 
@@ -101,9 +121,12 @@ const headerWhyUs = {
       <section class="pb-32">
         <div class="container wrapper">
             <div class="grid grid-cols-2 md:grid-cols-4 gap-12">
-                {category.map(item=>{
+                {category.map((item, index)=>{
+                 // const currentCount = index > 3 ? index - ((index / 4) * 4 ): index;
+                  console.log('index')
+                  console.log('index',index - ((index / 4) * 4 ))
                     return(
-                        <article>
+                        <article data-delay={index%4 * 200} class="inView slideUp">
                             <img src={item.img} class="mb-8 rounded-2xl w-full"/>
                             <a href={item.link} class="h3">{item.name}</a>
                             </article>
@@ -125,9 +148,9 @@ const headerWhyUs = {
       <section class="pb-32">
         <div class="container wrapper">
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
-                {Products.map(item=>{
+                {Products.map((item, index)=>{
                     return(
-                        <article>
+                        <article  data-delay={index%4 * 200} class="inView slideUp">
                             <img src={item.img} class="mb-8 rounded-2xl w-full"/>
                             <a href={item.link} class="h3">{item.name}</a>
                             <p class="big text-grey">{item.description}</p>
