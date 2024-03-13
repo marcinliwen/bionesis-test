@@ -918,3 +918,10 @@ z-index: 2;
     opacity: 1;
     transform: translate3d(0, 0, 0);
   }
+  .hero-slider .swiper-pagination-bullet {
+    background: #fff;
+}
+.hero-slider .swiper-horizontal>.swiper-pagination-bullets, .hero-slider .swiper-pagination-bullets.swiper-pagination-horizontal,
+.hero-slider .swiper-pagination-custom, .swiper-pagination-fraction{
+    bottom: 80px;
+}

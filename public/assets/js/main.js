@@ -193,6 +193,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 delay: 2500,
                 disableOnInteraction: true,
               },
+              pagination: {
+                el: ".swiper-pagination",
+                dynamicBullets: true,
+              },
         })
     }
 
